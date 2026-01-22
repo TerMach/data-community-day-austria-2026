@@ -110,11 +110,13 @@ class ConferenceApp {
         // Modal close
         document.querySelector('.modal-close').addEventListener('click', () => {
             document.getElementById('session-modal').classList.remove('active');
+            document.body.classList.remove('modal-open');
         });
-        
+
         document.getElementById('session-modal').addEventListener('click', (e) => {
             if (e.target.id === 'session-modal') {
                 document.getElementById('session-modal').classList.remove('active');
+                document.body.classList.remove('modal-open');
             }
         });
     }
@@ -342,6 +344,7 @@ class ConferenceApp {
             </button>
         `;
 
+        document.body.classList.add('modal-open');
         modal.classList.add('active');
         // Force scroll to top - try both modal and body
         setTimeout(() => {
@@ -384,13 +387,14 @@ class ConferenceApp {
             </div>
 
             <button
-                onclick="document.getElementById('session-modal').classList.remove('active');"
+                onclick="document.getElementById('session-modal').classList.remove('active'); document.body.classList.remove('modal-open');"
                 style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;"
             >
                 Close
             </button>
         `;
 
+        document.body.classList.add('modal-open');
         modal.classList.add('active');
         // Force scroll to top - try both modal and body
         setTimeout(() => {

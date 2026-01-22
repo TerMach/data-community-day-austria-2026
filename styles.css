@@ -27,6 +27,12 @@ body {
     line-height: 1.6;
 }
 
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 /* === Header === */
 .app-header {
     background: var(--primary);
@@ -410,9 +416,10 @@ body {
     /* Mobile modal improvements */
     .modal-content {
         width: calc(100% - 1rem);
-        margin: 0.5rem auto;
-        padding: 3rem 1rem 1.5rem 1rem; /* Extra top padding */
-        border-radius: 8px; /* Slightly smaller border radius on mobile */
+        margin: 0 auto; /* Remove top margin on mobile */
+        padding: 3.5rem 1rem 1.5rem 1rem; /* Even more top padding */
+        border-radius: 0; /* No border radius on mobile for full screen feel */
+        min-height: 100vh; /* Take full viewport height */
     }
 
     .modal-close {
