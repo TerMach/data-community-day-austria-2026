@@ -343,6 +343,7 @@ class ConferenceApp {
         `;
 
         modal.classList.add('active');
+        modal.scrollTop = 0; // Scroll modal to top
     }
 
     showSpeakerDetail(speakerName) {
@@ -386,6 +387,7 @@ class ConferenceApp {
         `;
 
         modal.classList.add('active');
+        modal.scrollTop = 0; // Scroll modal to top
     }
     
     toggleFavorite(sessionId) {

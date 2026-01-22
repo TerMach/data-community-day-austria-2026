@@ -337,17 +337,12 @@ body {
     bottom: 0;
     background: rgba(0,0,0,0.5);
     z-index: 1000;
-    padding: 1rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .modal.active {
-    display: flex;
-    align-items: flex-start; /* Changed from center to flex-start */
-    justify-content: center;
-    padding-top: 2rem; /* Add top padding for better spacing */
-    padding-bottom: 2rem; /* Add bottom padding */
+    display: block; /* Changed from flex to block for simpler scrolling */
 }
 
 .modal-content {
@@ -355,13 +350,10 @@ body {
     border-radius: 12px;
     padding: 2rem;
     max-width: 700px;
-    width: 100%;
+    width: calc(100% - 2rem);
+    margin: 1rem auto; /* Center horizontally, add vertical spacing */
     position: relative;
     box-shadow: var(--shadow-lg);
-    max-height: calc(100vh - 4rem); /* Ensure it doesn't exceed viewport height */
-    overflow-y: auto; /* Allow content to scroll if needed */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    margin: auto 0; /* Center vertically when content is small */
 }
 
 .modal-close {
@@ -409,19 +401,10 @@ body {
     }
 
     /* Mobile modal improvements */
-    .modal {
-        padding: 0.5rem;
-    }
-
-    .modal.active {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        align-items: flex-start; /* Ensure content starts at top on mobile */
-    }
-
     .modal-content {
+        width: calc(100% - 1rem);
+        margin: 0.5rem auto;
         padding: 1.5rem;
-        max-height: calc(100vh - 1rem); /* Almost full screen on mobile */
         border-radius: 8px; /* Slightly smaller border radius on mobile */
     }
 
