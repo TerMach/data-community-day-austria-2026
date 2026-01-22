@@ -348,12 +348,19 @@ body {
 .modal-content {
     background: var(--surface);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 3rem 2rem 2rem 2rem; /* Extra top padding for close button */
     max-width: 700px;
     width: calc(100% - 2rem);
     margin: 1rem auto; /* Center horizontally, add vertical spacing */
     position: relative;
     box-shadow: var(--shadow-lg);
+    min-height: 200px; /* Ensure minimum height */
+}
+
+#session-detail {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .modal-close {
@@ -404,7 +411,7 @@ body {
     .modal-content {
         width: calc(100% - 1rem);
         margin: 0.5rem auto;
-        padding: 1.5rem;
+        padding: 3rem 1rem 1.5rem 1rem; /* Extra top padding */
         border-radius: 8px; /* Slightly smaller border radius on mobile */
     }
 

@@ -343,7 +343,12 @@ class ConferenceApp {
         `;
 
         modal.classList.add('active');
-        modal.scrollTop = 0; // Scroll modal to top
+        // Force scroll to top - try both modal and body
+        setTimeout(() => {
+            modal.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }, 10);
     }
 
     showSpeakerDetail(speakerName) {
@@ -387,9 +392,14 @@ class ConferenceApp {
         `;
 
         modal.classList.add('active');
-        modal.scrollTop = 0; // Scroll modal to top
+        // Force scroll to top - try both modal and body
+        setTimeout(() => {
+            modal.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }, 10);
     }
-    
+
     toggleFavorite(sessionId) {
         // Prevent removing common sessions (breaks, lunch, registration)
         const commonSessionIds = ['reg-1', 'break-1', 'break-2', 'lunch-1', 'break-3', 'break-4'];
