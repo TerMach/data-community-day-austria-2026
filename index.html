@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Community Austria Day 2026 - Conference App">
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Data Community Austria Day 2026</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Data Community Austria Day 2026</h1>
+                <p class="header-date">January 23, 2026 | JUFA Hotel Wien</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <nav class="tabs">
+                <button class="tab active" data-tab="schedule">
+                    📅 Schedule
+                </button>
+                <button class="tab" data-tab="my-schedule">
+                    ⭐ My Schedule
+                </button>
+                <button class="tab" data-tab="chatbot">
+                    🤖 Chatbot
+                </button>
+            </nav>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Schedule Tab -->
+            <div id="schedule-tab" class="tab-content active">
+                <div class="filters">
+                    <label>
+                        <select id="room-filter">
+                            <option value="all">All Rooms</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div id="schedule-grid" class="schedule-grid">
+                    <!-- Loading... -->
+                    <div class="loading">Loading schedule...</div>
+                </div>
+            </div>
+            
+            <!-- My Schedule Tab -->
+            <div id="my-schedule-tab" class="tab-content">
+                <div id="my-schedule-list" class="sessions-list">
+                    <p class="empty-state">You haven't selected any sessions yet. Mark them with a star in the schedule!</p>
+                </div>
+            </div>
+            
+            <!-- Chatbot Tab -->
+            <div id="chatbot-tab" class="tab-content">
+                <div class="chatbot-container">
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="message bot">
+                            <p>👋 Hi! Ask me anything about the conference - for example "Which sessions start at 1:45 PM?" or "Tell me more about Hugo Kornelis". Du kannst auch Deutsch mit mir sprechen. A česky taky umím!</p>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <input
+                            type="text"
+                            id="chat-input"
+                            placeholder="Ask about the conference..."
+                            autocomplete="off"
+                        >
+                        <button id="chat-send">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Session Detail Modal -->
+        <div id="session-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div id="session-detail"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.Python
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (pokud později použiješ)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# API Keys (DŮLEŽITÉ!)
+config.js
+secrets.js
+*.key
+
+# Build files
+dist/
+build/
+*.log
