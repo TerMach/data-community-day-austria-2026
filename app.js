@@ -344,14 +344,22 @@ class ConferenceApp {
             </button>
         `;
 
-        document.body.classList.add('modal-open');
+        // Scroll to top BEFORE opening modal
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+
         modal.classList.add('active');
-        // Force scroll to top - try both modal and body
+        modal.scrollTop = 0;
+
+        // Add modal-open class after a brief delay to prevent body scroll position from affecting modal
+        setTimeout(() => {
+            document.body.classList.add('modal-open');
+        }, 50);
+
+        // Ensure modal stays scrolled to top
         setTimeout(() => {
             modal.scrollTop = 0;
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }, 10);
+        }, 100);
     }
 
     showSpeakerDetail(speakerName) {
@@ -394,14 +402,22 @@ class ConferenceApp {
             </button>
         `;
 
-        document.body.classList.add('modal-open');
+        // Scroll to top BEFORE opening modal
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+
         modal.classList.add('active');
-        // Force scroll to top - try both modal and body
+        modal.scrollTop = 0;
+
+        // Add modal-open class after a brief delay to prevent body scroll position from affecting modal
+        setTimeout(() => {
+            document.body.classList.add('modal-open');
+        }, 50);
+
+        // Ensure modal stays scrolled to top
         setTimeout(() => {
             modal.scrollTop = 0;
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }, 10);
+        }, 100);
     }
 
     toggleFavorite(sessionId) {
